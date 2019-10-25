@@ -1,0 +1,23 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+PIDFile=/var/run/gunicorn.pid
+User=root
+Group=root
+RuntimeDirectory=gunicorn
+WorkingDirectory=/home/shiv/stunning-computing-machine/mysite
+ExecStart= /home/shiv/anaconda3/envs/basicwebsite/bin/gunicorn   \
+               --pid /var/run/gunicorn.pid                       \
+               --access-logfile /var/log/gunicorn_access.log     \
+               --error-logfile /var/log/gunicorn_error.log       \
+               --bind unix:/var/run/gunicorn.socket mysite.wsgi
+
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
