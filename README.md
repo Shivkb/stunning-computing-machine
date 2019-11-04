@@ -25,3 +25,4 @@
    - curl http://localhost/articles/2003/
    - curl http://localhost/articles/2004/
    - curl http://localhost/articles/2004/06/
+   - http://35.223.113.55/articles/2003/ from browser works
