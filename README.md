@@ -21,8 +21,16 @@
    - remove any other sites from that directory
    - Enable the nginx service
 
+ - https support
+   - obtain domain name from godaddy / google domains
+   - Point this domain name to the external IP provided
+   - Use the certbot from letsencrypt to generate the certificates
+   - nginx config with ssl for let's encypt certs
+     - https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38
+     - replace the domain.com with the domain name obtained
+   - openssl dhparam -out dhparam4096.pem 4096. Copy the pem file to /etc/ssl
+
  - Testing
-   - curl http://localhost/articles/2003/
-   - curl http://localhost/articles/2004/
-   - curl http://localhost/articles/2004/06/
-   - http://35.223.113.55/articles/2003/ from browser works
+   - http://api.kubelearning.com/articles/2003/ from browser works
+   - https://api.kubelearning.com/articles/2003/ from browser works
+
