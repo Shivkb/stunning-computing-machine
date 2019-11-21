@@ -1,5 +1,6 @@
 FROM python:3.7-alpine
 ENV PYTHONBUFFERED 1
+ENV deployment docker
 RUN apk add --no-cache bash
 
 RUN mkdir /mysite
@@ -11,6 +12,7 @@ RUN pip install -r /mysite/requirements.txt
 RUN mkdir -p /mysite/mysite
 WORKDIR /mysite
 COPY ./mysite /mysite/mysite
+COPY ./core /mysite/core
 
 RUN adduser -D ubuntu
 USER ubuntu
