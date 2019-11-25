@@ -16,8 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.environ['deployment'] == 'docker':
     DB_DIR = '/db'
+    LOG_DIR = '/var/log'
 else:
     DB_DIR = BASE_DIR
+    LOG_DIR = BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -132,3 +134,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'core.User'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': LOG_DIR + '/debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

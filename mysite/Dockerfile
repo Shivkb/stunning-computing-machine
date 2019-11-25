@@ -14,6 +14,8 @@ RUN pip install -r /mysite/requirements.txt
 RUN apk del .tmp-build-deps
 
 RUN mkdir -p /mysite/mysite
+RUN mkdir -p /var/log
+RUN chmod uog+rwx /var/log
 WORKDIR /mysite
 COPY ./mysite /mysite/mysite
 COPY ./core /mysite/core
