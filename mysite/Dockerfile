@@ -19,6 +19,7 @@ RUN chmod uog+rwx /var/log
 WORKDIR /mysite
 COPY ./mysite /mysite/mysite
 COPY ./core /mysite/core
+COPY ./user /mysite/user
 
 RUN adduser -D ubuntu
 USER ubuntu
