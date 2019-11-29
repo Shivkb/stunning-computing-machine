@@ -34,6 +34,14 @@
    - http://api.kubelearning.com/articles/2003/ from browser works
    - https://api.kubelearning.com/articles/2003/ from browser works
 
+ - postgresql
+   - Install psycopg2-binary
+   - export the below ENV variables for the bare metal to run..
+       DB_NAME, DB_HOST, DB_PASSWORD, DB_USER
+   - Have provided the above variables in gunicorn.env
+   - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+   - change the password on the db to 'supersecretpassword'
+ 
  - Deployment
    - Bare Metal
        - Enable the gunicorn service
