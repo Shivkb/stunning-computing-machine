@@ -21,5 +21,5 @@ COPY ./mysite /mysite/mysite
 COPY ./core /mysite/core
 COPY ./user /mysite/user
 
-RUN adduser -D ubuntu
+RUN addgroup --system ubuntu && adduser --system ubuntu -G ubuntu
 USER ubuntu

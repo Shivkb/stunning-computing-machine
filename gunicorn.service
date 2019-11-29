@@ -1,6 +1,5 @@
 [Unit]
 Description=gunicorn daemon
-Requires=gunicorn.socket
 After=network.target
 
 [Service]
@@ -13,7 +12,7 @@ ExecStart= /home/shiv/anaconda3/envs/basicwebsite/bin/gunicorn   \
                --pid /var/run/gunicorn.pid                       \
                --access-logfile /var/log/gunicorn_access.log     \
                --error-logfile /var/log/gunicorn_error.log       \
-               --bind unix:/var/run/gunicorn.socket mysite.wsgi
+               --bind 127.0.0.1:8001 mysite.wsgi
 
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID

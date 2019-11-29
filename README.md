@@ -12,7 +12,7 @@
    - Activate anaconda environment basicwebsite
    - Install gunicorn in the environment
    - https://docs.gunicorn.org/en/latest/deploy.html - Systemd
-   - Make changes to gunicorn.service, gunicorn.socket as per repo files
+   - Make changes to gunicorn.service as per repo files
    - Enable the gunicorn service
 
  - Nginx
@@ -33,4 +33,14 @@
  - Testing
    - http://api.kubelearning.com/articles/2003/ from browser works
    - https://api.kubelearning.com/articles/2003/ from browser works
+
+ - Deployment
+   - Bare Metal
+       - Enable the gunicorn service
+       - Enable the nginx service
+   - Unit test
+       - docker-compose run mysite sh -c "python manage.py test && flake8"
+   - Docker
+       - docker-compose -f docker-compose.prod.yml up
+       - Enable the nginx service
 
