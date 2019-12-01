@@ -37,7 +37,7 @@
  - postgresql
    - Install psycopg2-binary
    - export the below ENV variables for the bare metal to run..
-       DB_NAME, DB_HOST, DB_PASSWORD, DB_USER
+       DB_NAME=app, DB_HOST=localhost, DB_PASSWORD=supersecretpassword, DB_USER=postgres
    - Have provided the above variables in gunicorn.env
    - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
    - change the password on the db to 'supersecretpassword'
