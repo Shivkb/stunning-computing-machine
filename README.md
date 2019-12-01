@@ -44,11 +44,13 @@
  
  - Deployment
    - Bare Metal
+       - Start the postgresql running on bare-metal (sudo service postgresql start)
        - Enable the gunicorn service
        - Enable the nginx service
    - Unit test
        - docker-compose run mysite sh -c "python manage.py test && flake8"
    - Docker
+       - Stop the postgresql running on bare-metal (sudo service postgresql stop)
        - docker-compose -f docker-compose.prod.yml up
        - Enable the nginx service
 
