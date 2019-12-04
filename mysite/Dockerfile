@@ -20,6 +20,7 @@ WORKDIR /mysite
 COPY ./mysite /mysite/mysite
 COPY ./core /mysite/core
 COPY ./user /mysite/user
+COPY ./recipe /mysite/recipe
 
 RUN addgroup --system ubuntu && adduser --system ubuntu -G ubuntu
 USER ubuntu
