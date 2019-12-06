@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mysite import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('user.urls')),
     path('api/recipe/', include('recipe.urls')),
+    path('api/recipe/', include('recipe.urls')),
     path('articles/2003/', views.current_datetime),
     path('articles/<int:year>/', views.year_archive),
     path('articles/<int:year>/<int:month>/', views.month_archive),
     path('articles/<int:year>/<int:month>/<slug:slug>/', views.article_detail),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
