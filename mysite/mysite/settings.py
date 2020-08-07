@@ -36,7 +36,7 @@ SECRET_KEY = 'weza0de%&x^nbg5b1r94yprkdt#+222vk^-&f(o1%ii3br37cs'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', '192.168.0.240', 'api.kubelearning.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', '35.232.120.6']
 
 
 # Application definition
